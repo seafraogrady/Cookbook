@@ -1,0 +1,26 @@
+
+
+
+<div class="container"
+    *ngIf="recipe.recipeName && recipe.ingredients.ingredientList && recipe.ingredients.nutrition
+    && recipe.method.stepOne && recipe.method.stepTwo && recipe.method.stepThree " >
+   <div class="list-group-head">
+     <h4 class> Recipe Name : {{recipe.recipeName}}</h4>
+   </div>
+  <ul>
+    <li class="list-group-item"> Serves :{{recipe.serves}}</li>  
+
+    <li class="list-group-item"> Ingredients : 
+        {{recipe.ingredients.ingredientList}}</li>  
+        <li class="list-group-item">  Nutrition:{{recipe.ingredients.nutrition}}</li>  
+        <li class="list-group-item">  
+    Method :
+        {{recipe.method.stepOne}}
+        {{recipe.method.stepTwo}}
+        {{recipe.method.stepThree}}</li>
+   </ul> 
+   
+
+   <ngb-rating [max]="5" [(rate)]="starRating" [readonly]="false"></ngb-rating>
+   </div>
+    

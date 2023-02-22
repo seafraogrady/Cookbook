@@ -1,0 +1,19 @@
+<div><h1>Profile</h1>
+<p>Info on profile</p></div>
+
+<div *ngIf="user$ | async as user">
+  <div class="row align-items-center profile-header">
+    <div class="col-md-2 mb-3">
+      <img 
+      [src]="user.picture"
+      alt="User's Profile Picture"
+      class="rounded-circle img-fluid profile-picture">
+   </div>
+  </div>
+  <div class="col-md text-center text-md-left">
+ <h2>User Name: {{ user.name }}</h2>
+ <p class="lead text-mutes">User Email:{{ user.email }}</p> g serve
+
+  </div>
+
+</div>
