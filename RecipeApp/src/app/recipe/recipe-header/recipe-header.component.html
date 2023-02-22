@@ -1,8 +1,8 @@
 
 
-<nav class="navbar navbar-expand-md bg-dark navbar-dark">
+<nav class="navbar navbar-expand-md ">
   <div class="container">
-    <a class="navbar-brand" href="#">Recipe Blog</a>
+    <a class="navbar-brand" href="#">Cookbook</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse"
       aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -14,29 +14,33 @@
           <a class="nav-link" routerLink="/">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" routerLink="/recipes">Recipes</a>
+          <a class="nav-link" routerLink="/community">Community</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/recipes">Recipe</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" routerLink="/profile">Profile</a>
         </li>
       </ul>
       </div>
-      <div class="d-flex align-items-center">
+      <div class="d-flex align-items-center ">
 
-              <button type="button" *ngIf="!(isAuthenticated$ | async)" class="btn btn-primary col-6 px-3 me-2" 
+              <button type="button" *ngIf="!(isAuthenticated$ | async)" class="btn btn- col-6 " 
               (click)=handleLogin()>
                   Login
               </button>
+              &nbsp;&nbsp;&nbsp;&nbsp;
 
 
-              <button type="button" *ngIf="!(isAuthenticated$ | async)" class="btn btn-secondary col-6 px-3 me-2" 
+              <button type="button" *ngIf="!(isAuthenticated$ | async)" class="btn btn-col-6 " 
               (click)=handleSignUp()>
                   SignUp
               </button>
 
 
               <button *ngIf="isAuthenticated$ | async"
-              class="btn btn-primary me-3"
+              class="btn btn- me-3"
               (click)= handleLogout()>
                   Log Out
               </button>

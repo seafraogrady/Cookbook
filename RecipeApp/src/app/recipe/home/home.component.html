@@ -1,20 +1,15 @@
-<div
-class="p-5 text-center bg-image"
-style="
-  background-image: url('https://www.medibank.com.au/content/dam/livebetter/en/images/migrated/324538f6338f4a575843949de2a7d960/healthy-cooking.jpg.thumb.1440.1440.png');
-  height: 500px;
-  margin-top: 58px;
-"
->
-<div class="mask" style="background-color: rgba(0, 0, 0, 0.6);">
-  <div class="d-flex justify-content-center align-items-center h-100">
-    <div class="text-white">
-      <h1 class="mb-3">Whats for Dinner?</h1>
-      <h4 class="mb-3">get inspired</h4>
-      <a class="btn btn-outline-light btn-lg" routerLink="/recipes" href="#!" role="button"
-        >Recipes</a
-      >
-    </div>
-  </div>
-</div>
-</div>
+<div class="container">
+  <div class="card-group">
+  <div class="row">
+  <div class="card col-md-3" *ngFor="let recipe of recipeList"  (click)='clicked(recipe)'
+        
+  [class.bg-dark]="isSelected(recipe)" [class.text-white]="isSelected(recipe)" routerLink="recipes">
+  <img class="card-img-top" *ngIf="recipe.image?.url" [src]="recipe.image.url" [alt]="recipe.recipeName ">
+  <p class="card-title">{{recipe.recipeName}}</p>
+  
+
+            </div></div>
+            </div>
+          
+          </div>
+            

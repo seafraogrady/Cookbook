@@ -18,6 +18,7 @@ import { environment } from 'src/environments/environment';
 import { ProfileComponent } from './recipe/profile/profile.component';
 import { HomeComponent } from './recipe/home/home.component';
 import { NgImageSliderModule } from 'ng-image-slider';
+import { CommunityComponent } from './community/community.component';
 
 
 
@@ -31,7 +32,8 @@ import { NgImageSliderModule } from 'ng-image-slider';
     RecipeRowComponent,
     RecipeHeaderComponent,
     ProfileComponent,
-    HomeComponent
+    HomeComponent,
+    CommunityComponent
   ],
   
   imports: [

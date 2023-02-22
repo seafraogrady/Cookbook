@@ -19,7 +19,9 @@ export class ProfileComponent implements OnInit {
 
   user$ = this.auth.user$;
   code$ = this.user$.pipe(map((user) => JSON.stringify(user, null)));
-
+  showRecipeForm:boolean = false;
+  
+  currentRecipe : Recipe | undefined;
   constructor(public auth: AuthService,private recipeService: RecipeService) { }
 
   ngOnInit(): void {
@@ -31,6 +33,60 @@ export class ProfileComponent implements OnInit {
       error: (mess) => this.message = mess
 
     })
+  }
+  openAddRecipe(): void {
+    this.currentRecipe = undefined;
+    this.showRecipeForm = true;
+
+  }
+  openEditRecipe(): void {
+    this.showRecipeForm = true;
+  }
+  
+
+  recipeFormClose(recipe?: any): void {
+    this.showRecipeForm = false;
+    console.table(recipe);
+    if (recipe == null) {
+      this.message = "form closed w/o saving"
+      this.currentRecipe = undefined
+    }
+    else if (this.currentRecipe == null) {
+      this.addNewRecipe(recipe);
+    }
+    else {
+      this.updateRecipe(this.currentRecipe._id, recipe)
+    }
+  }
+  updateRecipe(id: string, recipe: Recipe): void {
+    console.log('updating');
+
+    console.table(recipe);
+    this.recipeService.updateRecipe(id, recipe)
+      .subscribe({
+        next: recipe => {
+          console.log(JSON.stringify(recipe) + 'has been updated');
+          this.message = "updated";
+
+        },
+        error: (err) => this.message = err
+      });
+
+    this.ngOnInit();
+  }
+
+  addNewRecipe(newRecipe: Recipe): void {
+    console.log('adding new recipe ' + JSON.stringify(newRecipe));
+    this.recipeService.addRecipe({ ...newRecipe })
+      .subscribe({
+        next: recipe => {
+          console.log(JSON.stringify(recipe) + ' has been added');
+          this.message = "new recipe has been added";
+          this.ngOnInit();
+        },
+        error: (err) => this.message = err
+      });
+
   }
 
 }

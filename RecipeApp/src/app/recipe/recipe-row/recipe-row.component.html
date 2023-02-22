@@ -1,6 +1,6 @@
 
 
-          <app-recipe-details *ngIf="currentRecipe" [recipe]="currentRecipe"></app-recipe-details>
+         
           <div class="container-fluid">
 
 
@@ -12,87 +12,8 @@
             
 
 
-         <app-recipe-form *ngIf="showRecipeForm" (recipeFormClose)="recipeFormClose($event)" [recipe]="currentRecipe"
-  ></app-recipe-form>
-
        
            <span class="add" >
               <button (click)="openAddRecipe()" *ngIf="!showRecipeForm" class="btn btn-lg btn-outline-primary">Add </button>
   
             </span>
-          <!-- 
-    
-<div class="row">
-  <div class="col-md-3" *ngFor="let recipe of recipeList"  (click)='clicked(recipe)'
-        
-  [class.bg-dark]="isSelected(recipe)" [class.text-white]="isSelected(recipe)">
-    <div class="card shadow-lgs">
-      <div class="header">
-        <img class="img-fluid" *ngIf="recipe.image?.url" [src]="recipe.image.url" [alt]="recipe.recipeName ">
-      </div>
-      <div class="card-body">
-        <ul class="list-group">
-          <li class="list-group-item">
-            RECIPE : {{recipe.recipeName}}
-          </li>
-          <li class="list-group-item">
-COOK IN :  {{recipe.cookTime}}
-          </li>
-          <li class="list-group-item">
-
-          MEAL : {{recipe.mealType}}
-        </li>     
-        
-        <li class="list-group-item">
-          <span class="edit" >
-            <button (click)="openEditRecipe()" *ngIf="!showRecipeForm" [disabled]="!currentRecipe"
-            class="btn btn-lg btn-outline-primary">Edit</button>
-        
-            </span>
-            
-          <span class="delete">
-            <button (click)="deleteRecipe()" *ngIf="!showRecipeForm" [disabled]="!currentRecipe"
-            class="btn btn-lg btn-outline-danger">Delete</button>
-            </span>
-            
-        </li>
-        </ul>
-
-      </div>
-    </div>
-  </div>
-</div> -->
-
-<div class="card-group">
-  <div class="row">
-  <div class="card col-md-3" *ngFor="let recipe of recipeList"  (click)='clicked(recipe)'
-        
-  [class.bg-dark]="isSelected(recipe)" [class.text-white]="isSelected(recipe)">
-  <img class="card-img-top" *ngIf="recipe.image?.url" [src]="recipe.image.url" [alt]="recipe.recipeName ">
-  <h5 class="card-title"> RECIPE : {{recipe.recipeName}}</h5>
-  <div class="card-body">
-  <ul class="list-group">
-    <li class="list-group-item">
-      COOK IN : {{recipe.cookTime}}
-                </li>
-                <li class="list-group-item">
-      
-                MEAL : {{recipe.mealType}}
-              </li>     
-              <li class="list-group-item">
-                <span class="edit" >
-                  <button (click)="openEditRecipe()" *ngIf="!showRecipeForm" [disabled]="!currentRecipe"
-                  class="btn btn-lg btn-outline-primary">Edit</button>
-              
-                  </span>
-                  
-                <span class="delete">
-                  <button (click)="deleteRecipe()" *ngIf="!showRecipeForm" [disabled]="!currentRecipe"
-                  class="btn btn-lg btn-outline-danger">Delete</button>
-                  </span>
-                  
-              </li>
-              </ul>
-      </div>
-
-            </div>
