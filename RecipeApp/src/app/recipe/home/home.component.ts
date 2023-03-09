@@ -3,6 +3,7 @@ import { Recipe } from '../../recipe';
 import { RecipeService } from '../../recipe.service';
 import { SettingsService } from 'src/app/settings.service';
 import { DomSanitizer } from '@angular/platform-browser';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-recipe-row',
   templateUrl: './home.component.html',
@@ -20,7 +21,7 @@ export class HomeComponent implements OnInit {
 
   showRecipeForm:boolean = false;
 
-  constructor(private recipeService: RecipeService) { }
+  constructor(private recipeService: RecipeService, private router: Router) { }
 
  
   ngOnInit(): void {
@@ -46,8 +47,10 @@ export class HomeComponent implements OnInit {
         });
   }
   
-  clicked (recipe:Recipe): void {
-    this.currentRecipe = recipe
+  clicked (id:any): void {
+    this.router.navigate(['/recipes', id]);
+    
+    
   }
 
   dismissAlert() {

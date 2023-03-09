@@ -23,6 +23,7 @@ export class RecipeService {
   findByRecipeName(recipeName: any): Observable<Recipe[]> {
     return this.http.get<Recipe[]>(`${this.dataUri}?recipeName=${recipeName}`);
   }
+  
 
   getRecipes(): Observable<Recipe[]> {
     console.log("get recipes called");
@@ -33,16 +34,23 @@ export class RecipeService {
       catchError(this.handleError)
     );
   }
-  getRecipe(id: String): Observable<Recipe> {
+
+ getRecipeById(id:String): Observable<Recipe> {
+  return this.http.get<Recipe>(`${this.dataUri}/${id}`)
+  }
+
+getRecipe(id: any): Observable<Recipe> {
 
     console.log("get recipe called" );
-
     return this.http.get<Recipe>(`${this.dataUri}/${id}`)
     .pipe(
       retry(3),
       catchError(this.handleError)
-    );
+    )!;
   }
+  
+
+
   deleteRecipe(id: string): Observable<unknown> {
     const url = `${this.dataUri}/${id}`;
     return this.http.delete(url)

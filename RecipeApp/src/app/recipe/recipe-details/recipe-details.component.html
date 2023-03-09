@@ -1,11 +1,10 @@
 
 
 
-<div class="container"
-    *ngIf="recipe.recipeName && recipe.ingredients.ingredientList && recipe.ingredients.nutrition
-    && recipe.method.stepOne && recipe.method.stepTwo && recipe.method.stepThree " >
+<div class="container"     *ngIf="recipe.recipeName && recipe.ingredients.ingredientList && recipe.ingredients.nutrition
+&& recipe.method.stepOne && recipe.method.stepTwo && recipe.method.stepThree " >
    <div class="list-group-head">
-     <h4 class> Recipe Name : {{recipe.recipeName}}</h4>
+     <h4 class="list-group-item">Recipe :{{recipe.recipeName}}</h4>
    </div>
   <ul>
     <li class="list-group-item"> Serves :{{recipe.serves}}</li>  
