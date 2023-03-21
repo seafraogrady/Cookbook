@@ -1,15 +1,12 @@
-ngb-rating {
-    color: #FFC107;
-    font-size: 80px;
+
+  .img {
+    padding:20px;
+    height: 200px;
+    width:400px;
+    object-fit: cover;
 }
 .container {
-    font-family: 'Montserrat', sans-serif !important;
-}
-h4 {
-    
-        position: center;
-        
-        left: 40%;
-        
+    padding-top:80px;
+    padding-right:180px;
+  }
   
-}

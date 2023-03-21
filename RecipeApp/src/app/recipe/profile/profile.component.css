@@ -4,6 +4,23 @@
         object-fit: cover;
   }
   
-  .container{
-    padding:40px;
+  .img {
+    padding:20px;
+    height: 200px;
+    width:400px;
+    object-fit: cover;
+}
+.container {
+    padding-top:80px;
+    padding-right:180px;
+  
+  }
+  .col-md-8 h2 {
+    position: relative;
+    left: 120px;
+   
+  }
+  .p {
+    position: relative;
+    left: 120px;
   }

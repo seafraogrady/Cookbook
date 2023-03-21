@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClient, HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
@@ -17,13 +17,15 @@ import { AuthHttpInterceptor, AuthModule} from '@auth0/auth0-angular';
 import { environment } from 'src/environments/environment';
 import { ProfileComponent } from './recipe/profile/profile.component';
 import { HomeComponent } from './recipe/home/home.component';
-import { NgImageSliderModule } from 'ng-image-slider';
+import { MaterialIcon } from 'material-icons';
 import { CommunityComponent } from './community/community.component';
 import { LoginComponent } from './auth/login/login.component';
 import { RegisterComponent } from './auth/register/register.component';
 import { RecipesModule } from './recipe/recipes.module';
 import { RecipesRoutingModule } from './recipe/recipes-routing.module';
+import { FaveComponent } from './recipe/fave/fave.component';
 import { Routes } from '@angular/router';
+import { AdminComponent } from './admin/admin.component';
 const routes: Routes = [
 
   {path: '', component: HomeComponent},
@@ -45,22 +47,24 @@ const routes: Routes = [
     RecipeFormComponent,
     RecipeListComponent,
     RecipeRowComponent,
+    FaveComponent,
     RecipeHeaderComponent,
     ProfileComponent,
     HomeComponent,
     CommunityComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    AdminComponent
   ],
   
   imports: [
     BrowserModule,
- 
     HttpClientModule,
     FormsModule,
+
     ReactiveFormsModule,
+    
 RecipesRoutingModule,
-    NgImageSliderModule,
     RouterModule.forRoot(routes),
     
     NgbModule,
@@ -77,6 +81,7 @@ RecipesRoutingModule,
     useClass: AuthHttpInterceptor,
     multi: true,
   },],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class AppModule { }

@@ -4,8 +4,11 @@ import { CommonModule } from '@angular/common';
 import { RecipesRoutingModule } from './recipes-routing.module';
 
 
+
 @NgModule({
-  declarations: [],
+  declarations: [
+
+  ],
   imports: [
     CommonModule,
     RecipesRoutingModule

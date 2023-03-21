@@ -10,12 +10,12 @@
   },
   "private": true,
   "dependencies": {
-    "@angular/animations": "^15.0.4",
+    "@angular/animations": "^15.2.3",
     "@angular/common": "^15.0.4",
     "@angular/compiler": "^15.0.4",
     "@angular/core": "^15.0.4",
     "@angular/forms": "^15.0.4",
-    "@angular/material": "^15.0.0",
+    "@angular/material": "^15.2.3",
     "@angular/platform-browser": "^15.0.4",
     "@angular/platform-browser-dynamic": "^15.0.4",
     "@angular/router": "^15.0.4",
@@ -27,6 +27,7 @@
     "bootstrap": "^5.2.2",
     "cors": "^2.8.5",
     "jarallax": "^2.0.4",
+    "material-icons": "^1.13.2",
     "ng-image-slider": "^6.1.0",
     "popper.js": "^1.16.1",
     "rxjs": "~7.5.0",
@@ -34,7 +35,7 @@
     "zone.js": "~0.11.4"
   },
   "devDependencies": {
-    "@angular-devkit/build-angular": "^15.0.4",
+    "@angular-devkit/build-angular": "^15.2.4",
     "@angular/cli": "~15.0.4",
     "@angular/compiler-cli": "^15.0.4",
     "@types/jasmine": "~4.0.0",

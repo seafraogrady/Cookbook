@@ -35,18 +35,7 @@ export class HomeComponent implements OnInit {
     })
     
   }
-  searchTitle(): void {
-    this.recipeService.findByRecipeName(this.recipeName)
-      .subscribe(
-        data => {
-          this.recipes = data;
-          console.log(data);
-        },
-        error => {
-          console.log(error);
-        });
-  }
-  
+
   clicked (id:any): void {
     this.router.navigate(['/recipes', id]);
     

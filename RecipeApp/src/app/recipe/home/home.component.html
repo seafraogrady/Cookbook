@@ -5,9 +5,10 @@
         
   [class.bg-dark]="isSelected(recipe)" [class.text-white]="isSelected(recipe)" routerLink="recipes">
   <img class="card-img-top" *ngIf="recipe.image?.url" [src]="recipe.image.url" [alt]="recipe.recipeName ">
-  <p class="card-title">{{recipe.recipeName}}</p>
-  
+ 
 
+  <p class="card-title">{{recipe.recipeName}}</p>
+  <app-fave></app-fave>
             </div></div>
             </div>
           

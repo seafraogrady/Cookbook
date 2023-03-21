@@ -1,27 +1,21 @@
 <div class="container">
-
-
 <div *ngIf="user$ | async as user">
-  <div class="row align-items-center profile-header">
-    <div class="col-md-2 mb-3">
+  <div class="row">
+<div class="col-md-8">
+   
       <img 
       [src]="user.picture"
       alt="User's Profile Picture"
       class="rounded-circle img-fluid profile-picture">
-   </div>
-  </div>
-  <div class="col-md text-center text-md-left">
- <h2>User Name: {{ user.name }}</h2>
- <p class="lead text-mutes">User Email:{{ user.email }}</p>
- 
- <span class="add"   >
-  <button  (click)="openAddRecipe()" *ngIf="!showRecipeForm" class="btn btn-lg btn-outline-primary"><span class="bi bi-plus"> Create Recipe</span></button>
+ <h2> {{ user.name }}</h2>
+</div>
+</div>
+</div>
+</div>
 
-</span>
+
+
 
 <app-recipe-form *ngIf="showRecipeForm" (recipeFormClose)="recipeFormClose($event)" [recipe]="currentRecipe"
 ></app-recipe-form>
-  </div>
 
-</div>
-</div>

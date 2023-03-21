@@ -1,24 +1,28 @@
+<div class="container">
+<div class="card-group">
+  <div class="row">
+  <div class="card col">
+    <img class="img" *ngIf="recipe.image?.url" [src]="recipe.image.url" [alt]="recipe.recipeName ">
+    <h1 style="text-align: center;"> {{recipe.recipeName}}</h1> 
 
-
-
-<div class="container"     *ngIf="recipe.recipeName && recipe.ingredients.ingredientList && recipe.ingredients.nutrition
-&& recipe.method.stepOne && recipe.method.stepTwo && recipe.method.stepThree " >
-   <div class="list-group-head">
-     <h4 class="list-group-item">Recipe :{{recipe.recipeName}}</h4>
-   </div>
-  <ul>
-    <li class="list-group-item"> Serves :{{recipe.serves}}</li>  
-
-    <li class="list-group-item"> Ingredients : 
+  <div class="recipe-details">
+    <div class="cook"><b>Cook in : {{recipe.cookTime }}</b></div>
+    <div class="prep" ><b>Prep : {{recipe.prepTime}}</b></div>
+    <div class="serves"><b>Serves : {{recipe.serves}}</b></div>
+  </div>
+  <ul> 
+    <li class="list-group-item"> <b>Ingredients : </b>
         {{recipe.ingredients.ingredientList}}</li>  
-        <li class="list-group-item">  Nutrition:{{recipe.ingredients.nutrition}}</li>  
+        <li class="list-group-item">  <b>Nutrition:</b>{{recipe.ingredients.nutrition}}</li>  
         <li class="list-group-item">  
-    Method :
+    <b>Method :</b>
         {{recipe.method.stepOne}}
         {{recipe.method.stepTwo}}
         {{recipe.method.stepThree}}</li>
    </ul> 
-   
 
-   </div>
-    
+
+    </div>
+    </div>
+    </div>
+</div>
