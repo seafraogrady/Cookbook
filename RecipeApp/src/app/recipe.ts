@@ -9,5 +9,5 @@ image: { url:String},
     cookTime:string,
     prepTime: string,
     mealType: string,
-    user: {username:string,email:string,password:string,role:string}
+    creadtedBy:string,
 }

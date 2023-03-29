@@ -22,7 +22,7 @@ export class ProfileComponent implements OnInit {
   showRecipeForm:boolean = false;
   
   currentRecipe : Recipe | undefined;
-  constructor(public auth: AuthService,private recipeService: RecipeService) { }
+  constructor(public auth: AuthService,private router:Router,private recipeService: RecipeService) { }
 
   ngOnInit(): void {
     
@@ -35,14 +35,15 @@ export class ProfileComponent implements OnInit {
     })
   }
   openAddRecipe(): void {
-    this.currentRecipe = undefined;
-    this.showRecipeForm = true;
+ this.router.navigate(['/recipe-form']);
 
   }
   openEditRecipe(): void {
     this.showRecipeForm = true;
   }
-  
+  dismissAlert() {
+    this.message = "";
+  }
 
   recipeFormClose(recipe?: any): void {
     this.showRecipeForm = false;
